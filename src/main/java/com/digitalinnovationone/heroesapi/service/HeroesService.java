@@ -29,7 +29,7 @@ public class HeroesService {
 
     public Mono<Boolean> deleteByIdHero(String id){
         heroesRepository.deleteById(id);
-        return Mono.justOrEmpty(true);
+        return Mono.just(true);
     }
 
 }

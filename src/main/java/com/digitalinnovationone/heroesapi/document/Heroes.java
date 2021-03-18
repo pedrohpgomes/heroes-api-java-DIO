@@ -16,10 +16,13 @@ public class Heroes {
     @Id
     @DynamoDBHashKey(attributeName = "id")
     private String id;
+
     @DynamoDBAttribute(attributeName = "name")
     private String name;
+
     @DynamoDBAttribute(attributeName = "universe")
     private String universe;
+
     @DynamoDBAttribute(attributeName = "films")
     private int films;
 

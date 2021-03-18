@@ -18,8 +18,8 @@ import com.amazonaws.services.dynamodbv2.document.DynamoDB;
 import com.amazonaws.services.dynamodbv2.document.Table;
 import static com.digitalinnovationone.heroesapi.constants.HeroesConstant.*;
 
-@Configuration
-@EnableDynamoDBRepositories
+/*@Configuration
+@EnableDynamoDBRepositories*/
 public class HeroesTable {
 
     public static void main(String[] args) throws Exception {

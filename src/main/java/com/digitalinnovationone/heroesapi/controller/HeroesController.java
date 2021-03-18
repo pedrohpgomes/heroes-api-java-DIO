@@ -3,6 +3,7 @@ package com.digitalinnovationone.heroesapi.controller;
 import com.digitalinnovationone.heroesapi.document.Heroes;
 import com.digitalinnovationone.heroesapi.repository.HeroesRepository;
 import com.digitalinnovationone.heroesapi.service.HeroesService;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -11,7 +12,7 @@ import reactor.core.publisher.Mono;
 import static com.digitalinnovationone.heroesapi.constants.HeroesConstant.*;
 
 @RestController
-//@Slf4j
+@Slf4j
 
 public class HeroesController {
     HeroesService heroesService;
@@ -53,7 +54,7 @@ public class HeroesController {
 
     @DeleteMapping(HEROES_ENDPOINT_LOCAL + "/{id}")
     @ResponseStatus(code = HttpStatus.NOT_FOUND)
-    public Mono<HttpStatus> deletebyIDHero(@PathVariable String id) {
+    public Mono<HttpStatus> deletebyIdHero(@PathVariable String id) {
         heroesService.deleteByIdHero(id);
         log.info("Deleting the hero with id {}", id);
         return Mono.just(HttpStatus.NOT_FOUND);
